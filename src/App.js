@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import './App.css';
-import About from './Components/About';
+// import About from './Components/About';
 import Navbar from './Components/Navbar';
 // import React, { useState } from 'react';
 
@@ -9,12 +9,11 @@ import Textform from './Components/Textform';
 import Alert from './Components/Alert';
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import ReactDOM from "react-dom/client";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route
+// } from "react-router-dom";
 
 
 function App() {
@@ -46,23 +45,23 @@ function App() {
 
   return (
      <>
-    <Router>
+    {/* <Router> */}
     <Navbar name="MUQ" home="Home" about="About" mode={mode} togglemode={togglemode}/>
     <Alert alert={alert}/> 
    
-       <div className="container my-3">
+       {/* <div className="container my-3">
        <Switch>
             <Route path="/about" >
-               <About />
-            </Route>
-            <Route path="/">
+               <About mode={mode} />
+            </Route> */}
+            {/* <Route path="/"> */}
                <Textform heading="Enter text to work with" showAlert={showAlert}mode={mode}/>  
-            </Route>  
-        </Switch>
+            {/* </Route>   */}
+        {/* </Switch>  */}
     
        
-       </div>
-       </Router>   
+       {/* </div>
+        </Router>     */}
   
     
     {/* {/* <Route path='/' element={   <Textform heading="Enter text to work with" showAlert={showAlert}mode={mode}/>}/> */}

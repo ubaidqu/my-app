@@ -56,10 +56,10 @@ return (
 <div className="mb-3">
 <textarea className="form-control" value={text}  onChange={handleONchange}style={{backgroundColor:props.mode==='dark'?'	#202020':'white',color:props.mode==='dark'?'white':'black'}}id="myBox"  rows="8" ></textarea>
 </div>
-<button  className="btn btn-primary mx-1" onClick={handleUPclick}>Convert to upper case</button>
-<button className="btn btn-primary mx-1" onClick={handlelowclick} >Convert to lower case</button>
-<button className="btn btn-primary mx-1" onClick={clear}>Clear all</button>
-<button className="btn btn-primary mx-1" onClick={Vowels}>Count Vowels</button>
+<button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleUPclick}>Convert to upper case</button>
+<button disabled={text.length===0} className="btn btn-primary mx-1  my-1" onClick={handlelowclick} >Convert to lower case</button>
+<button disabled={text.length===0} className="btn btn-primary mx-1  my-1" onClick={clear}>Clear all</button>
+<button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={Vowels}>Count Vowels</button>
 {/* <button type="button" class="btn btn-primary">Primary</button> */}
 {/* <button className="btn btn primary" onClick={Consonents}>Count Consonents</button> */}
 
@@ -69,8 +69,8 @@ return (
 <div className="container "style={{color:props.mode==='dark'?'white':'black'}}>
   <h2>Text Summary </h2>
    {/* <p>{text.split("")}words</p> */}
-  <p>{(text.split(" ").length)-1}words and {text.length}charcters</p>
-  <p>{0.008 * text.split(" ").length} time required  </p>
+  <p>{(text.split( /\s/).filter((element)=>{return element.length!==0}).length)}words and {text.length}charcters</p>
+  <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} time required  </p>
   <p>Number of Vowels are {count}</p>
   {/* <p>Number of consonents are {count2}</p> */}
   <h3>Preview</h3>
